@@ -16,6 +16,8 @@ jdk:
   - oraclejdk8
 services:
   - mysql
+install:
+  - travisCI/install-apache.sh
 before_script:
   - composer self-update 2.0.14
   - sudo apt-get install -y php-common
