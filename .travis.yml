@@ -2,12 +2,12 @@ language: php
 os:
   - linux
 dist: focal
-arch:
-  - arm64-graviton2
-virt: lxd
-group: edge
+#arch:
+#  - arm64-graviton2
+#virt: lxd
+#group: edge
 php:
-  - "5.4"
+  - "7.4"
 env:
   global:
     - COMPOSER_BIN: "$TRAVIS_BUILD_DIR/vendor/bin"
