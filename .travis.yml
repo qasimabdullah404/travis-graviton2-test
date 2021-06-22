@@ -1,0 +1,30 @@
+language: php
+os:
+  - linux
+dist: xenial
+arch:
+  - arm64-graviton2
+virt: lxd
+group: edge
+php:
+  - "7.4"
+env:
+  global:
+    - COMPOSER_BIN: "$TRAVIS_BUILD_DIR/vendor/bin"
+    - BLT_DIR: "$TRAVIS_BUILD_DIR/vendor/acquia/blt"
+jdk:
+  - oraclejdk8
+services:
+  - mysql
+  - xvfb
+before_install:
+  - cp .travis/.npmrc docroot/themes/custom/bootstrap_padi/
+  - cp .travis/config.json $HOME/.composer/
+  - composer self-update 2.0.14
+  - composer config --global http-basic.padi.jfrog.io $JFROG_BUILD_USERNAME $JFROG_BUILD_KEY
+  - composer validate --no-check-all --ansi
+  - composer install --prefer-dist
+  - chmod -v 600 services/oauth/public.key
+  - source ${BLT_DIR}/scripts/travis/exit_early
+  - phpenv config-rm xdebug.ini
+script: true
