@@ -19,7 +19,6 @@ services:
   - xvfb
 before_install:
   - composer self-update 2.0.14
-  - composer validate --no-check-all --ansi
   - composer install --prefer-dist
   - phpenv config-rm xdebug.ini
 script: true
