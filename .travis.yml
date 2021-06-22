@@ -16,7 +16,7 @@ jdk:
   - oraclejdk8
 services:
   - mysql
-before_install:
+before_script:
   - composer self-update 2.0.14
   - phpenv config-rm xdebug.ini
 script: true
