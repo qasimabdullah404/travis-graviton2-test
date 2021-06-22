@@ -18,6 +18,6 @@ services:
   - mysql
 before_script:
   - composer self-update 2.0.14
-  - sudo phpdismod xdebug
+  - sudo phpdismod -v php7.4 xdebug
   - sudo service apache2 restart
 script: true
