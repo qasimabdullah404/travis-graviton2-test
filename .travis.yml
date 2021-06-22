@@ -1,7 +1,7 @@
 language: php
 os:
   - linux
-dist: xenial
+dist: focal
 arch:
   - arm64-graviton2
 virt: lxd
@@ -16,7 +16,6 @@ jdk:
   - oraclejdk8
 services:
   - mysql
-  - xvfb
 before_install:
   - composer self-update 2.0.14
   - phpenv config-rm xdebug.ini
