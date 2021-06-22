@@ -20,5 +20,5 @@ before_script:
   - composer self-update 2.0.14
   - sudo apt-get install -y php-common
   - sudo phpdismod -v php7.4 xdebug
-  - sudo service apache2 restart
+  - sudo systemctl restart apache2.service
 script: true
