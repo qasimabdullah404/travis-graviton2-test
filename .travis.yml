@@ -17,7 +17,7 @@ jdk:
 services:
   - mysql
 install:
-  - ./install-apache.sh
+  - sudo ./install-apache.sh
 before_script:
   - composer self-update 2.0.14
   - php --version
