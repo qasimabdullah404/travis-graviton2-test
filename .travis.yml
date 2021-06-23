@@ -19,5 +19,5 @@ before_script:
   - sudo apt-get install -y php-common
   - bash .mysql.sh
   - sudo phpdismod -v php7.4 xdebug
-  - sudo mysql -u root -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
+#  - sudo mysql -u root -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
 script: true
