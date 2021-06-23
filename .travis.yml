@@ -17,9 +17,5 @@ before_script:
   - php --version
   - sudo apt-get install -y php-common
   - sudo phpdismod -v php7.4 xdebug
-  - sudo mysql -u root -e 'drop user if exists drupal@localhost;'
-  - sudo mysql -u root -e 'create user drupal@localhost;'
-  - sudo mysql -u root -e 'drop database if exists drupal;'
-  - sudo mysql -u root -e 'create database drupal;'
-  - sudo mysql -u root -e 'grant all on *.* to drupal@localhost;' || true
+  - mysql -u root -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
 script: true
