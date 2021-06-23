@@ -1,7 +1,7 @@
 language: php
 os:
   - linux
-dist: focal
+dist: xenial
 arch:
   - arm64-graviton2
 virt: lxd
