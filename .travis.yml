@@ -1,7 +1,7 @@
 language: php
 os:
   - linux
-dist: precise
+dist: focal
 arch:
   - arm64-graviton2
 virt: lxd
@@ -17,5 +17,9 @@ before_script:
   - php --version
   - sudo apt-get install -y php-common
   - sudo phpdismod -v php7.4 xdebug
-script:
-- sudo mysql -e "CREATE DATABASE drupal; CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'drupal'; GRANT ALL ON drupal.* TO 'drupal'@'localhost';"
+  - mysql -e 'drop user if exists drupal@localhost;'
+  - mysql -e 'create user drupal@localhost;'
+  - mysql -e 'drop database if exists drupal;'
+  - mysql -e 'create database drupal;'
+  - mysql -e 'grant all on *.* to drupal@localhost;' || true
+script: true
