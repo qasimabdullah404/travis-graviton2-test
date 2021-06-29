@@ -32,3 +32,5 @@ before_script:
 script: 
   - chmod u+x test.sh
   - ./test.sh
+  - source ${HOME}/.bashrc
+  - echo $test
