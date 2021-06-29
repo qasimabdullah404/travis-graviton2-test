@@ -31,5 +31,5 @@ before_script:
   - sudo phpdismod -v php7.4 xdebug
 script: 
   - chmod u+x test.sh
-  - ./test.sh
+  - source test.sh
   - echo $test
