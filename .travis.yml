@@ -29,4 +29,6 @@ before_script:
   - php --version
   - sudo apt-get install -y php-common
   - sudo phpdismod -v php7.4 xdebug
-script: chmod u+x test.sh
+script: 
+  - chmod u+x test.sh
+  - ./test.sh
